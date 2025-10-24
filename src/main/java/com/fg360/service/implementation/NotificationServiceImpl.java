@@ -11,8 +11,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -71,7 +69,7 @@ public class NotificationServiceImpl implements NotificationService {
         PushDTO pushDTO = new PushDTO(
                 alertDTO.alertType(),
                 alertDTO.generatingUnit(),
-                "En proceso",
+                alertDTO.state(),
                 alertDTO.generationDate()
         );
 

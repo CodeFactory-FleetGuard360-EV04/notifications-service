@@ -84,11 +84,14 @@ El microservicio espera recibir un mensaje con formato **JSON** desde la cola de
 
 ```json
 {
-  "toUsers": ["correo_conductor@mail.com"],
+  "toUsers": ["usuario1@ejemplo.com", "usuario2@ejemplo.com", "usuario3@ejemplo.com"],
   "alertType": "Exceso de Velocidad",
-  "responsible": "Juan Pérez",
-  "generatingUnit": "Vehículo - Unidad 73",
-  "generationDate": "2025-10-19T12:34:56"
+  "responsible": "Seguridad Vial",
+  "priority": "Alta",
+  "driver": "Ana Gómez",
+  "generatingUnit": "Vehículo - Unidad 102",
+  "state": "Activo",
+  "generationDate": "2025-10-24T14:30:00"
 }
 ```
 
