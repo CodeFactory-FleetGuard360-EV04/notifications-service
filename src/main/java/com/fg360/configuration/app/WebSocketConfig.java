@@ -27,7 +27,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws-alerts")
-                .setAllowedOriginPatterns("*")
+                .setAllowedOrigins(
+                        "http://127.0.0.1:5500",
+                        "http://localhost:3000",
+                        "http://localhost:4200"
+                )
                         .withSockJS();
 
         //.setAllowedOrigins(url frontend)
