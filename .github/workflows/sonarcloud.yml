@@ -40,7 +40,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           ./gradlew clean test jacocoTestReport sonarqube \
-            -Dsonar.projectKey=tu-org_notifications-service \
-            -Dsonar.organization=tu-org \
+            -Dsonar.projectKey=CodeFactory-FleetGuard360-EV04_notifications-service \
+            -Dsonar.organization=codefactory-fleetguard360-ev04 \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
