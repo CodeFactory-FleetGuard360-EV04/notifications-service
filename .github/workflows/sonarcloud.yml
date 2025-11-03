@@ -39,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          ./gradlew clean test jacocoTestReport sonarqube \
+          ./gradlew clean test jacocoTestReport sonar \
             -Dsonar.projectKey=CodeFactory-FleetGuard360-EV04_notifications-service \
             -Dsonar.organization=codefactory-fleetguard360-ev04 \
             -Dsonar.host.url=https://sonarcloud.io \
