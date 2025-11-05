@@ -30,7 +30,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                 .setAllowedOrigins(
                         "http://127.0.0.1:5500",
                         "http://localhost:3000",
-                        "http://localhost:4200"
+                        "http://localhost:4200",
+                        "https://cf2025frontend.vercel.app"
                 )
                         .withSockJS();
 
