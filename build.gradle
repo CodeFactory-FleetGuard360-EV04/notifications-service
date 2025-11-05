@@ -56,7 +56,7 @@ tasks.jacocoTestReport {
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
-                    '**/com/fg360/configuration/**',
+                    '**/com/fg360/configuration/app/**',
                     '**/com/fg360/presentation/controller/dto/**',
                     '**/com/fg360/Application*'
             ])
