@@ -69,11 +69,12 @@ sonarqube {
         property "sonar.projectKey", "CodeFactory-FleetGuard360-EV04_notifications-service"
         property "sonar.organization", "codefactory-fleetguard360-ev04"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.junit.reportPaths", "build/test-results/test"
-        property "sonar.java.binaries", "build/classes"
+        property "sonar.java.binaries", "build/classes/java/main"
         property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.exclusions", "**/com/fg360/configuration/**, **/com/fg360/presentation/**, **/com/fg360/Application*"
     }
 }
+
 
 
 tasks.named('test') {
