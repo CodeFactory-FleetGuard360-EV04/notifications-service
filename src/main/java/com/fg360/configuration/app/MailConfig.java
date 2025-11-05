@@ -17,6 +17,12 @@ public class MailConfig {
     @Value("${email.password}")
     private String emailPassword;
 
+    @Value("${email.host:smtp.gmail.com}")  // Agregar
+    private String emailHost;
+
+    @Value("${email.port:465}")  // Cambiar a 465
+    private int emailPort;
+
     @Bean
     public JavaMailSender getJavaMailSender() {
 
@@ -30,7 +36,12 @@ public class MailConfig {
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+
+        if (emailPort == 465) {
+            props.put("mail.smtp.ssl.enable", "true");
+        } else {
+            props.put("mail.smtp.starttls.enable", "true");
+        }
 
         return mailSender;
     }

@@ -21,5 +21,7 @@ spring:
 email:
   SENDER: "${EMAIL_SENDER}"
   password: "${EMAIL_PASSWORD}"
+  host: "${EMAIL_HOST:smtp.gmail.com}"
+  port: "${EMAIL_PORT:465}"
 frontend:
   url: "${URL_FRONTEND}"
