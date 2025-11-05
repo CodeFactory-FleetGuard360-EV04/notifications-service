@@ -51,10 +51,16 @@ public class NotificationServiceImpl implements NotificationService {
 
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+            if(emailSender.equals("apikey")){
+                helper.setFrom("fabricaescuelafleetguard@gmail.com");
+            }
+            else{
+                helper.setFrom(emailSender);
+            }
             helper.setTo(alertDTO.toUsers());
             helper.setSubject("Fleet Guard 360 - " + alertDTO.alertType());
             helper.setText(html, true);
-            
+
             mailSender.send(message);
             logger.info("Recibido mensaje en la cola 'email_notification_queue': {}", alertDTO);
 

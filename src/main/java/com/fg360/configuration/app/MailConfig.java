@@ -37,12 +37,6 @@ public class MailConfig {
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
 
-        if (emailPort == 465) {
-            props.put("mail.smtp.ssl.enable", "true");
-        } else {
-            props.put("mail.smtp.starttls.enable", "true");
-        }
-
         return mailSender;
     }
 }
