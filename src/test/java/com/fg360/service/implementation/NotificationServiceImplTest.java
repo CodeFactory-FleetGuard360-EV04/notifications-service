@@ -11,6 +11,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 
 import static org.mockito.Mockito.*;
@@ -30,8 +31,12 @@ class NotificationServiceImplTest {
     private NotificationServiceImpl notificationService;
 
     @BeforeEach
-    void setup() {
+    void setup() throws Exception {
         MockitoAnnotations.openMocks(this);
+
+        Field emailSenderField = NotificationServiceImpl.class.getDeclaredField("emailSender");
+        emailSenderField.setAccessible(true);
+        emailSenderField.set(notificationService, "apikey");
     }
 
     @Test
