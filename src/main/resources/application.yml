@@ -20,7 +20,8 @@ spring:
         created:
           key: "${RABBITMQ_ALERT_CREATED_ROUTING_KEY}"
 email:
-  SENDER: "${EMAIL_SENDER}"
+  sender: "${EMAIL_SENDER}"
+  username: "${EMAIL_USERNAME}"
   password: "${EMAIL_PASSWORD}"
   host: "${EMAIL_HOST:smtp.gmail.com}"
   port: "${EMAIL_PORT:465}"

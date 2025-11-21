@@ -11,8 +11,8 @@ import java.util.Properties;
 @Configuration
 public class MailConfig {
 
-    @Value("${email.sender}")
-    private String emailSender;
+    @Value("${email.username}")
+    private String emailUsername;
 
     @Value("${email.password}")
     private String emailPassword;
@@ -30,7 +30,7 @@ public class MailConfig {
 
         mailSender.setHost(emailHost);
         mailSender.setPort(emailPort);
-        mailSender.setUsername(emailSender);
+        mailSender.setUsername(emailUsername);
         mailSender.setPassword(emailPassword);
 
         Properties props = mailSender.getJavaMailProperties();
